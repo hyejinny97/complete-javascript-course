@@ -61,3 +61,11 @@ if (dolphin === koalas && dolphin >= 100 && koalas >= 100) {
 } else {
   console.log('no team wins the trophy')
 }
+
+
+// ----- Coding Challenge #4 -----
+// 1. Calculate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement.
+const bill = 430;
+const tip = (50 <= bill && bill <= 300) ? bill * 0.15 : bill * 0.2;
+// 2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value 316.25”
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
