@@ -131,3 +131,119 @@ const 함수명 = parameter => 반환값;
 
 - 한 함수 내에서 다른 함수를 호출하는 방식
 - DRY(Don't Repeat Yourself) 원칙에 따라 반복 사용되는 코드는 함수로 만들어놓고 재사용하는 것이 유지보수에 좋음
+
+
+## ▶ 39. Introduction to Arrays
+
+- 여러 개의 data(요소)를 담는 container 데이터 구조
+- 요소에는 expression이 들어감
+  - 따라서, 요소로 string, number, variable, function 등 가능
+
+- Array 정의하는 방법
+  - Array는 원시타입이 아니므로 mutable함
+  - 따라서, const로 생성해도 요소를 바꿀 수 있음
+  - 다만, const로 생성할 경우 Array 자체를 변경하는 것은 불가
+  
+  ```js
+  // 방법1
+  const 변수명 = [ele1, ele2];
+
+  // 방법2
+  const 변수명 = new Array(ele1, ele2);
+  ```
+
+- Array 내 특정 요소 가져오는 법
+  - zero-based이므로 인덱스가 0부터 시작함
+  - `length` property를 통해 배열의 길이를 알 수 있음
+
+  ```js
+  // 첫번째 요소
+  변수명[0]
+
+  // 마지막 요소
+  변수명[변수명.length - 1]
+  ```
+
+- Array 내 특정 요소 변경하는 방법
+
+  ```js
+  변수명[0] = ele3
+  ```
+
+
+## ▶ 40. Basic Array Operations (Methods)
+
+### 🔹 element 추가
+
+1. `push()`
+   
+   - element를 input값으로 넣음
+   - array 가장 끝에 요소를 추가해 줌
+   - 새로운 배열의 length를 반환해 줌
+ 
+   ```js
+   const friends = ['Michael', 'Steven', 'Peter'];
+   friends.push('Jay');
+   console.log(friends);   // ['Michael', 'Steven', 'Peter', 'Jay']
+   ```
+
+2. `unshift()`
+   
+   - element를 input값으로 넣음
+   - array 가장 앞에 요소를 추가해줌
+   - 새로운 배열의 length를 반환해 줌
+  
+   ```js
+   const friends = ['Michael', 'Steven', 'Peter'];
+   friends.unshift('Jay');
+   console.log(friends);   // ['Jay', 'Michael', 'Steven', 'Peter']
+   ```
+
+### 🔹 element 제거
+
+1. `pop()`
+
+   - argument를 넣지 않은 경우, array 가장 끝에 요소를 제거해 줌
+   - 제거한 요소를 반환해 줌
+
+   ```js
+   const friends = ['Michael', 'Steven', 'Peter'];
+   friends.pop();
+   console.log(friends);   // ['Michael', 'Steven']
+   ```
+
+2. `shift()`
+
+   - argument를 넣지 않은 경우, array 가장 앞에 요소를 제거해 줌
+   - 제거한 요소를 반환해 줌
+
+   ```js
+   const friends = ['Michael', 'Steven', 'Peter'];
+   friends.pop();
+   console.log(friends);   // ['Michael', 'Steven']
+   ```
+
+### 🔹 element 찾기
+
+1. `indexOf()`
+   
+   - element를 input값으로 넣음
+   - 찾고자하는 요소의 index 위치를 반환해 줌
+   - 찾고자하는 요소가 없으면 `-1`을 반환해 줌
+
+   ```js
+   const friends = ['Michael', 'Steven', 'Peter'];
+   console.log(friends.indexOf('Peter'));   // 2
+   console.log(friends.indexOf('Bob'));     // -1
+   ```
+
+2. `includes()`
+   
+   - element를 input값으로 넣음
+   - 찾고자하는 요소가 array에 있으면 true, 없으면 false를 반환해 줌
+
+   ```js
+   const friends = ['Michael', 'Steven', 'Peter'];
+   console.log(friends.includes('Peter'));   // true
+   console.log(friends.includes('Bob'));     // false
+   ```
