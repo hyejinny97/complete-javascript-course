@@ -77,3 +77,28 @@ if (mark.calcBMI() > john.calcBMI()) {
 } else {
   console.log(`John's BMI (${Math.round(john.BMI * 10) / 10}) is higher than Mark's (${Math.round(mark.BMI * 10) / 10})!`)
 }
+
+
+// ----- Coding Challenge #4 -----
+// 1. Create an array 'bills' containing all 10 test bill values
+const bills2 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// 2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+const tips2 = [];
+const totals2 = [];
+// 3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values(bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+for (let i = 0; i < bills2.length; i++) {
+  const tip = calcTip(bills2[i]);
+  tips2.push(tip);
+  totals2.push(bills2[i] + tip);
+}
+console.log(tips2);
+console.log(totals2);
+// 4. Bonus: Write a function 'calcAverage' which takes an array called 'arr' as an argument. This function calculates the average of all numbers in the given array. This is a difficult challenge (we haven't done this before)! 
+const calcAverage2 = function (arr) {
+  let sum_nums = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum_nums += arr[i];
+  }
+  return sum_nums / arr.length;
+}
+console.log(calcAverage2(totals2));

@@ -385,3 +385,82 @@ const 함수명 = parameter => 반환값;
    console.log(jonas.calcAge());  // 46
    console.log(jonas.age);        // 46
    ```
+
+
+
+## ▶ 46. Iteration: The for Loop
+
+- 비슷한 코드를 반복해서 사용해야되는 일이 있을때, 반복문을 사용하면 됨
+- 반복문 중 for loop은 아래와 같이 사용할 수 있음
+  - 조건이 true를 만족할 때까지 for loop을 반복해서 진행함
+
+   ```js
+   for (let rep = 1; rep <= 30; rep++) {
+      console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+   }
+   ```
+
+
+
+## ▶ 47. Looping Arrays, Breaking and Continuing
+
+- for loop을 이용해 array 순회하기
+
+   ```js
+   for (let i = 0; i < jonas.length; i++) {
+      console.log(jonas[i]);
+   }
+   ```
+
+- `continue` 키워드: 현재 loop 단계를 끝내고 바로 다음 단계로 넘어감
+- `break` 키워드: loop을 완전히 끝내고 나감
+  
+
+
+## ▶ 48. Looping Backwards and Loops in Loops
+
+- for loop을 이용해 array 거꾸로 순회하기
+  
+  ```js
+   for (let i = jonas.length - 1; i >= 0; i--) {
+      console.log(jonas[i]);
+   }
+  ```
+
+- 반복문 안에 반복문 
+  
+  ```js
+   for (let exercise = 1; exercise < 4; exercise++) {
+      console.log(`-------- Starting exercise ${exercise}`);
+
+      for (let rep = 1; rep < 6; rep++) {
+         console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
+      }
+   }
+  ```
+
+
+
+## ▶ 49. The while Loop
+
+- while Loop도 마찬가지로 조건을 만족할 때까지 반복문을 돌림
+  
+  ```js
+   let rep = 1;
+   while (rep <= 10) {
+      console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+      rep++;
+   }
+  ```
+
+- 정확한 반복 횟수를 정할 수 없을 때, while loop을 사용하면 좋음
+  - ex) 주사위가 6이 나올 때까지 계속 반복문 돌리기
+
+   ```js
+   let dice = Math.trunc(Math.random() * 6) + 1;
+
+   while (dice !== 6) {
+      console.log(`You rolled a ${dice}`);
+      dice = Math.trunc(Math.random() * 6) + 1;
+   }
+   ```
