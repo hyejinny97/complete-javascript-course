@@ -1,4 +1,3 @@
-'use strict';
 // ----- Coding Challenge #1 -----
 const poll = {
   question: "What is your favorite programming language?",
@@ -11,7 +10,7 @@ const poll = {
 const displayResults = function (type = 'array') {
   if (type === 'array') {
     console.log(this.answers);
-  } else if (type === 'string') {
+  } else if (type === 'sting') {
     console.log(`Poll results are ${this.answers.join(', ')}`);
   }
 }
@@ -32,7 +31,7 @@ const registerNewAnswer = function () {
   this.answers[answer] += 1
   // 4. Run the 'displayResults' method at the end of each 'registerNewAnswer' method call.
   this.displayResults('array');
-  this.displayResults('string');
+  this.displayResults('sting');
 }
 poll.registerNewAnswer = registerNewAnswer;
 
@@ -56,3 +55,5 @@ displayResults2('string');
 
   document.body.addEventListener('click', () => header.style.color = 'blue');
 })();
+// 2. And now explain to yourself (or someone around you) why this worked! Take all the time you need. Think about when exactly the callback function is executed, and what that means for the variables involved in this example.
+// () => header.style.color = 'blue' 함수가 생성될 때, parent function의 EV인 header가 closure에 저장됨. 따라서, body를 클릭할 때마다 위 callback function이 실행되고 closure에서 header 변수를 찾게 됨
